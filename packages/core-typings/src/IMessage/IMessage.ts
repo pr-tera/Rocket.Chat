@@ -41,7 +41,7 @@ type OmnichannelTypesValues =
   | "livechat_transfer_history_fallback"
   | "livechat-close";
 
-type OtrMessageTypeValues = 'otr' | 'otr-ack' 
+type OtrMessageTypeValues = "otr" | "otr-ack";
 
 type OtrSystemMessages =
   | "user_joined_otr"
@@ -117,8 +117,8 @@ export interface IMessage extends IRocketChatRecord {
   tcount?: number;
   t?: MessageTypesValues;
   e2e?: "pending" | "done";
-	otrAck?: string;
-	notification?: boolean;
+  otrAck?: string;
+  notification?: boolean;
 
   urls?: MessageUrl[];
 

@@ -14,7 +14,6 @@ import './loginViaQuery';
 import './messageTypes';
 import './notifications';
 import './oauth';
-import './otr';
 import './readReceipt';
 import './renderMessage';
 import './renderNotification';
