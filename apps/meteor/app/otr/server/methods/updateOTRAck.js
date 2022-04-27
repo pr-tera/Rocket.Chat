@@ -1,12 +1,14 @@
 import { Meteor } from 'meteor/meteor';
 
-import { Messages } from '../../../models';
+import notifications from '../../../notifications/server/lib/Notifications';
 
 Meteor.methods({
-	updateOTRAck(_id, ack) {
+	updateOTRAck({ message, ack }) {
 		if (!Meteor.userId()) {
 			throw new Meteor.Error('error-invalid-user', 'Invalid user', { method: 'updateOTRAck' });
 		}
-		Messages.updateOTRAck(_id, ack);
+		const otrStreamer = notifications.streamRoomMessage;
+		message.otrAck = ack;
+		otrStreamer.emit(message.rid, message);
 	},
 });

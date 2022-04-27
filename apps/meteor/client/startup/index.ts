@@ -32,3 +32,4 @@ import './userSetUtcOffset';
 import './usersObserve';
 import './userStatusManuallySet';
 import '../lib/rooms/roomTypes';
+import './otr';
